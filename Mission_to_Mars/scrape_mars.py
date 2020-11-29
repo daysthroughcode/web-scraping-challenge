@@ -8,7 +8,7 @@ from splinter import Browser
 
 def init_browser():
     # Select Executable Path
-    executable_path = {"executable_path": "/usr/local/bin/chromedriver"}
+    executable_path = {"executable_path": "chromedriver"}
     return Browser("chrome", **executable_path, headless=False)
 
 
