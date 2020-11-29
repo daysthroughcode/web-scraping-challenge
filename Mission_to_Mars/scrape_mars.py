@@ -52,8 +52,8 @@ def scrape():
     #Read Object into pandas
     mars_facts = pd.read_html(facts_url)
     mars_df = mars_facts[0]
-    mars_df.columns = ['Description','Value']
-    mars_df.set_index('Description', inplace=True)
+    mars_df.columns = ['Parameter','Mars']
+    mars_df.set_index('Parameter', inplace=True)
     facts_table = mars_df.to_html()
     #mars_df.to_html(facts_table.html)    
 
@@ -88,11 +88,11 @@ def scrape():
     
     #Store Data In Dictionary
     mars_info = {
-        "news_title": news_tit,
-        "news_paragraph": news_para,
+        "news_tit": news_tit,
+        "news_para": news_para,
         "featured_image_url": featured_image_url,
         "mars_facts": facts_table,
-        "hemisphere_img_urls": hemisphere_urls
+        "hemisphere_urls": hemisphere_urls
 }
     
     # Close the browser after scraping
